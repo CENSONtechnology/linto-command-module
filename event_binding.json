@@ -1,0 +1,94 @@
+{
+    "broker_message": {
+        "ui/mute_on":{
+            "any" : { 
+                "triggers" : ["vad_stop", "deactivate"]
+            }
+        },
+        "ui/mute_off":{
+            "any" : { 
+                "triggers" : ["activate"]
+            }
+        },
+        "tts/speaking/start":{
+            "any" : { 
+                "triggers" : ["vad_stop", "deactivate"]
+            }
+        },
+        "tts/speaking/stop":{
+            "any" : { 
+                "triggers" : ["activate"]
+            }
+        },
+        "lintoclient/request/send":{
+            "any" : { 
+                "triggers" : ["vad_stop", "deactivate"]
+            }
+        },
+        "lintoclient/connected":{
+            "any" : { 
+                "triggers" : ["activate"]
+            }
+        },
+        "lintoclient/disconnected":{
+            "any" : { 
+                "triggers" : ["vad_stop", "deactivate"]
+            }
+        }, 
+        "ui/cancel": {
+            "any" : { 
+                "triggers" : ["vad_stop", "activate"]
+            }
+        }, 
+        "lintoclient/kill" : {
+            "any" : { 
+                "triggers" : ["exit"]
+            }
+        },
+        "lintoclient/action": {
+            "start_meeting": { 
+                "triggers" : ["vad_stop", "deactivate"]
+            },
+            "stop_meeting" : { 
+                "triggers" : ["activate"]
+            }
+        }
+    },
+    "internal": {
+        "wuw-spotted" : {
+            "publish": {
+                "topic" : "wuw/wuw-spotted",
+                "message" : "{\"on\":\"%(DATETIME)\", \"confidence\":%(VALUE)}"              
+            },
+            "triggers" : ["vad_start", "deactivate"]
+        },
+        "vad_start" : {
+            "publish": {
+                "topic" : "utterance/start",
+                "message" : "{\"on\":\"%(DATETIME)\"}"
+            }
+        },
+        "thresholdReached": {
+            "publish": {
+                "topic" : "utterance/stop",
+                "message" : "{\"on\":\"%(DATETIME)\", \"reason\":\"thresholdReached\"}"               
+            },
+            "triggers" : ["activate"]
+
+        },
+        "timeout": {
+            "publish": {
+                "topic" : "utterance/stop",
+                "message" : "{\"on\":\"%(DATETIME)\", \"reason\":\"timeout\"}"                
+            },
+            "triggers" : ["activate"]
+        },
+        "canceled": {
+            "publish": {
+                "topic" : "utterance/stop",
+                "message" : "{\"on\":\"%(DATETIME)\", \"reason\":\"canceled\"}"               
+            },
+            "triggers" : ["activate"]
+        }
+    }
+}
