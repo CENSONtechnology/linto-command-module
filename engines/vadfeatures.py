@@ -71,13 +71,3 @@ def split(signal, window_length, overlap=0):
     while i + window_length <= signal_length:
         yield signal[i:i+window_length]
         i += window_length - overlap
-
-
-def zcr(frame, norm=True):
-    """ Return the zero crossing rate of the given signal frame
-    input:
-        - frame: A numerical signal frame.
-    output:
-        - zero crossing rate (scalar)
-    """
-    return np.sum(np.not_equal(np.sign(frame[1:]), np.sign(frame[:-1]))) /(len(frame) if norm else 1)
