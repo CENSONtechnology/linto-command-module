@@ -32,14 +32,16 @@ sudo pip3 install -r requirements.txt
      
 
 ## KeyWord and models.
-Please refer to the [wiki]().
+The model provided with the repository is a model to spot the "Linto" Keyword based on ~500 recording made by a dozen of persons.
+If you want to use an other KeyWord please refer to [mycroft-precise wiki](https://github.com/MycroftAI/mycroft-precise/wiki/Training-your-own-wake-word).
 
 
 ## Built With
 
-* [Mycroft-Precise](https://www.pygame.org/) - Cross-platform set of Python modules designed for writing video games.
+* [Mycroft-Precise](https://github.com/MycroftAI/mycroft-precise) - A lightweight, simple-to-use, RNN wake word listener.
 * [Mosquitto](https://mosquitto.org/) - Easy to use MQTT Broker
-* [Tenacity]()
+* [Tenacity](https://github.com/jd/tenacity) - General-purpose retrying library
+* [paho-mqtt](https://pypi.org/project/paho-mqtt/) - MQTT client library.
 
 
 ## License

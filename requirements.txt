@@ -1,0 +1,5 @@
+numpy>=1.14
+scipy>=1.1
+pyalsaaudio>=0.2
+speechpy>=2.2
+tenacity>=4.12
