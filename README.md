@@ -25,10 +25,13 @@ sudo pip3 install -r requirements.txt
 ```
 
 ### HOW TO
-## Project architecture and folders. 
+## Architecture
+<img src="https://image.ibb.co/eHBAPJ/voice_commander_diagram.png"
+     alt="project architecture"
+     style="float: center;" />
+     
 
-
-## KeyWord and models. 
+## KeyWord and models.
 Please refer to the [wiki]().
 
 
